@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facial Expression Prediction</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #b51b75;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        margin-top: 50px;
+        text-align: center;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .predicted-image {
+        margin-top: 20px;
+        max-width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Facial Expression Prediction Result</h1>
+      <div class="result">
+        <p>Predicted Expression: {{data}}</p>
+      </div>
+      <img
+        src="{{url_for('static', filename='after.jpg')}}"
+        alt="Predicted Image"
+        class="img-fluid predicted-image"
+      />
+    </div>
+  </body>
+</html>
