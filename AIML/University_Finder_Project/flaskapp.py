@@ -132,10 +132,5 @@ def predict_admission(gre, toefl, rating, sop, lor, cgpa, research):
         print(f"Prediction error: {e}")
         return "Error in prediction. Please try again."
 
-
-@app.route('/')
-def index():
-    return "Welcome to the Admission Predictor!"
-
 if __name__ == '__main__':
     app.run(debug=True)  
