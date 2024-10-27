@@ -1,0 +1,69 @@
+# Admission Predictor
+
+## Overview
+
+The Admission Predictor is a web application designed to help aspiring students evaluate their chances of securing admission to their desired colleges based on various parameters. Users can input their GRE scores, TOEFL scores, university ratings, SOP, LOR, CGPA, and research experience to receive a personalized prediction of their admission likelihood.
+
+The application utilizes a machine learning model built with multiple linear regression, optimized through stochastic gradient descent, to analyze the relationships between user inputs and historical admission data.
+
+## Features
+
+- User authentication (signup and login)
+- Input form for prediction parameters
+- Display of predicted admission probability in a user-friendly interface
+- Data storage using MySQL
+
+## Technologies Used
+
+- **Flask**: A lightweight WSGI web application framework in Python.
+- **SQLAlchemy**: An ORM (Object Relational Mapper) for database interactions.
+- **MySQL**: The database used for storing user data.
+- **Joblib**: For loading the machine learning model.
+- **Pandas**: For data manipulation and analysis.
+- **Bootstrap**: For responsive web design.
+- **HTML/CSS**: For frontend development.
+
+## Installation
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Python (version 3.6 or later)
+- MySQL server
+- pip (Python package installer)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/admission-predictor.git
+cd admission-predictor
+
+#Set Up the Database
+
+-Create a new MySQL database named admissionProject.
+-Ensure that you have the necessary user privileges to create tables.
+
+#Update Configuration
+
+-Update the database URI in the app.py file to match your MySQL username and password:
+-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<username>:<password>@localhost/admissionProject'
+
+#Usage
+
+-Signup: Create a new account by providing a unique username and password.
+-Login: Use your credentials to log in to the application.
+-Predict: After logging in, navigate to the prediction page, fill in the required details (GRE, TOEFL, etc.), and submit the form to receive a prediction.
+
+#Contributing
+
+Contributions are welcome! If you have suggestions for improvements or features, feel free to submit a pull request or open an issue in the GitHub repository.
+
+### How to Use This README
+- Replace `your-username` in the clone link with your actual GitHub username.
+- Ensure the database configuration section is accurate according to your setup.
+- Update any specific parts relevant to your project as needed.
+- Include any additional features, setup steps, or instructions that may be pertinent to users. 
+
+This README file should serve as a comprehensive guide to help users understand and get started with your Admission Predictor project.
+
