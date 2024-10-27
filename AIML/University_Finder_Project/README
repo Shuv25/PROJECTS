@@ -6,6 +6,10 @@ The Admission Predictor is a web application designed to help aspiring students 
 
 The application utilizes a machine learning model built with multiple linear regression, optimized through stochastic gradient descent, to analyze the relationships between user inputs and historical admission data.
 
+# dataset link
+
+https://www.kaggle.com/datasets/akshaydattatraykhare/data-for-admission-in-the-university
+
 ## Features
 
 - User authentication (signup and login)

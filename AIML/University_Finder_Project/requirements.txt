@@ -1,0 +1,6 @@
+pandas
+scikit-learn
+flask
+flask-wtf
+flask-sqlalchemy
+gunicorn
