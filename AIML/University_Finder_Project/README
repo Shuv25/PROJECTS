@@ -59,6 +59,10 @@ cd admission-predictor
 
 Contributions are welcome! If you have suggestions for improvements or features, feel free to submit a pull request or open an issue in the GitHub repository.
 
+#License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 ### How to Use This README
 - Replace `your-username` in the clone link with your actual GitHub username.
 - Ensure the database configuration section is accurate according to your setup.
