@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="card card-custom mx-auto" style="max-width: 600px;">
+    <div class="card-body text-center">
+        <h2 class="card-title">Welcome, {{ username }}!</h2>
+        <p class="lead">Ready to make predictions?</p>
+        <div class="d-flex justify-content-center">
+            <a href="{{ url_for('predict') }}" class="btn btn-primary-custom m-2">Go to Prediction Page</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary-custom m-2">Logout</a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card card-custom mx-auto" style="max-width: 1000px;">
+    <div class="card-body text-center">
+        <h3 class="card-title">About</h3>
+        <div class="d-flex justify-content-center">
+            <div style="text-align: justify; max-width: 80%;">
+                <p>
+                    Welcome to our Admission Predictor page, where aspiring students can evaluate their chances of securing a spot in their dream college! By simply entering your GRE Score, TOEFL Score, University Rating, Statement of Purpose (SOP), Letter of Recommendation (LOR), CGPA, and Research Experience, you can receive a personalized prediction of your admission likelihood.
+                </p>
+                <p>
+                    Our algorithm leverages the power of multiple linear regression, optimized through stochastic gradient descent.
+                </p>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="https://github.com/Shuv25" class="m-2" style="color: black;">GitHub</a>
+                    <a href="mailto:shuvsutradhar@gmail.com" class="m-2" style="color: black;">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
