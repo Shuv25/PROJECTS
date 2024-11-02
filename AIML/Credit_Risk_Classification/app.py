@@ -81,7 +81,7 @@ def predict():
         return redirect(url_for('login'))
 
     form = PredictionForm()
-    prediction = None  # Initialize prediction variable to None
+    prediction = None 
 
     if form.validate_on_submit():
         prediction = predict_loan_status(
@@ -95,7 +95,7 @@ def predict():
             form.loan_int_rate.data,
             form.loan_percent_income.data,
             form.cb_person_default_on_file.data,
-            form.cb_person_cred_hist_length.data  # Use the corrected form field
+            form.cb_person_cred_hist_length.data  
         )
         return render_template('prediction.html', form=form, prediction=prediction)
 
@@ -107,7 +107,6 @@ def logout():
     return redirect(url_for('login'))
 
 def predict_loan_status(age, income, home_ownership, emp_length, loan_intent, loan_grade, loan_amnt, loan_int_rate, loan_percent_income, default_on_file, cred_hist_length):
-    # Ensure all inputs are valid and handle any potential NaN values
     try:
         age = int(age) if age else 0
         income = float(income) if income else 0.0
@@ -117,7 +116,6 @@ def predict_loan_status(age, income, home_ownership, emp_length, loan_intent, lo
         loan_percent_income = float(loan_percent_income) if loan_percent_income else 0.0
         cred_hist_length = int(cred_hist_length) if cred_hist_length else 0
         
-        # Create DataFrame
         input_data = pd.DataFrame({
             'person_age': [age],
             'person_income': [income],
@@ -132,11 +130,9 @@ def predict_loan_status(age, income, home_ownership, emp_length, loan_intent, lo
             'cb_person_cred_hist_length': [cred_hist_length]
         })
 
-        # Check for NaN values in input_data
         if input_data.isnull().values.any():
             raise ValueError("Input contains NaN values.")
 
-        # Make prediction
         prediction = model.predict(input_data)
         return f"Predicted loan status: {'Default' if prediction[0] == 1 else 'Non-Default'}"
     except Exception as e:

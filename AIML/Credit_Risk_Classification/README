@@ -1,0 +1,58 @@
+# Credit Risk Classification
+
+# Overview
+The Credit Risk Classification web application is designed to help financial institutions evaluate the creditworthiness of loan applicants based on various parameters. Users can input their financial details, including income, loan amount, credit history, and more, to receive a personalized prediction of their credit risk status.
+
+The application utilizes a machine learning model built with multiple linear regression and optimized through stochastic gradient descent to analyze the relationships between user inputs and historical credit data.
+
+
+# Dataset Link
+https://www.kaggle.com/datasets/laotse/credit-risk-dataset
+
+# Features
+User authentication (signup and login)
+Input form for prediction parameters
+Display of predicted credit risk status in a user-friendly interface
+Data storage using MySQL
+
+# Technologies Used
+Flask: A lightweight WSGI web application framework in Python.
+SQLAlchemy: An ORM (Object Relational Mapper) for database interactions.
+MySQL: The database used for storing user data.
+Joblib: For loading the machine learning model.
+Pandas: For data manipulation and analysis.
+Bootstrap: For responsive web design.
+HTML/CSS: For frontend development.
+
+# Installation
+# Prerequisites
+Before you begin, ensure you have the following installed:
+
+Python (version 3.6 or later)
+MySQL server
+pip (Python package installer)
+Clone the Repository
+
+git clone https://github.com/your-username/credit-risk-classification.git
+cd credit-risk-classification
+
+# Set Up the Database
+Create a new MySQL database named loan_project.
+Ensure that you have the necessary user privileges to create tables.
+
+# Update Configuration
+Update the database URI in the app.py file to match your MySQL username and password:
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://<username>:<password>@localhost/loan_project'
+
+# Usage
+Signup: Create a new account by providing a unique username and password.
+Login: Use your credentials to log in to the application.
+Predict: After logging in, navigate to the prediction page, fill in the required details (income, loan amount, etc.), and submit the form to receive a prediction of your credit risk status.
+
+# Contributing
+Contributions are welcome! If you have suggestions for improvements or features, feel free to submit a pull request or open an issue in the GitHub repository.
+
+# License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+This README file should serve as a comprehensive guide to help users understand and get started with your Credit Risk Classification.
