@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}Loan Prediction{% endblock %}
+
+{% block content %}
+<div class="card card-custom mx-auto" style="max-width: 600px;">
+    <div class="card-body" style="padding: 15px;">
+        <h2 class="text-center">Loan Prediction Page</h2>
+
+        {% if prediction %}
+            <p class="mt-4 text-center"> {{ prediction }}</p>
+        {% endif %}
+
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.person_age.label }} (e.g., 22) {{ form.person_age(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.person_income.label }} (Annual Income) {{ form.person_income(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.person_home_ownership.label }} {{ form.person_home_ownership(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.person_emp_length.label }} (Years of Employment) {{ form.person_emp_length(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.loan_intent.label }} {{ form.loan_intent(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.loan_grade.label }} {{ form.loan_grade(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.loan_amnt.label }} (Loan Amount) {{ form.loan_amnt(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.loan_int_rate.label }} (Interest Rate) {{ form.loan_int_rate(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.loan_percent_income.label }} (Percent of Income) {{ form.loan_percent_income(class_="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.cb_person_default_on_file.label }} {{ form.cb_person_default_on_file(class_="form-control") }}
+            </div>
+           <div class="form-group">
+                {{ form.cb_person_cred_hist_length.label }} (Length of Credit History must be greater then 0){{ form.cb_person_cred_hist_length(class_="form-control") }} 
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Predict" class="btn btn-primary-custom">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
