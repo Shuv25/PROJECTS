@@ -5,15 +5,17 @@ from flask import Flask, render_template, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import SignupForm, LoginForm, PredictionForm
+from dotenv import load_dotenv
 import joblib  
 import pymysql
 
-
+load_dotenv()
 pymysql.install_as_MySQLdb()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.urandom(24) 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/addmissionProject'
+__tablename__ = 'users' 
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 
