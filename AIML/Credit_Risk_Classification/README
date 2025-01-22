@@ -3,7 +3,7 @@
 # Overview
 The Credit Risk Classification web application is designed to help financial institutions evaluate the creditworthiness of loan applicants based on various parameters. Users can input their financial details, including income, loan amount, credit history, and more, to receive a personalized prediction of their credit risk status.
 
-The application utilizes a machine learning model built with multiple linear regression and optimized through stochastic gradient descent to analyze the relationships between user inputs and historical credit data.
+The application utilizes a machine learning model built with SVM and optimized through stochastic gradient descent to analyze the relationships between user inputs and historical credit data.
 
 
 # Dataset Link
